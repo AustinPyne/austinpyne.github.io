@@ -1,36 +1,33 @@
 /* ==========================================================
-   GLOBAL GENERIC ADVANCED CSS
-   - Auto‑styles ANY HTML (no class names required)
-   - Dark/Light mode system
-   - Liquid Glass effects
-   - Fully responsive & animated
+   GENERIC ADVANCED CSS - BLACK TEXT, TRANSPARENT BACKGROUND
+   - Auto-styles ANY HTML
+   - Dark/Light mode toggle remains optional
+   - Liquid Glass effects maintained
    ========================================================== */
 
 /* --------------------- ROOT VARIABLES --------------------- */
 :root {
-  /* Light mode */
-  --bg: #f5f7ff;
-  --bg-glass: rgba(255,255,255,0.55);
-  --text: #111320;
-  --text-soft: #3a3d52;
+  --bg: transparent;
+  --bg-glass: rgba(255,255,255,0.25);
+  --text: #000000;
+  --text-soft: #222222;
   --accent: #4b4bff;
   --accent2: #7a5bff;
-  --card: rgba(255,255,255,0.7);
+  --card: rgba(255,255,255,0.25);
   --border: rgba(0,0,0,0.08);
   --shadow: rgba(0,0,0,0.15);
 }
 
 [data-theme="dark"] {
-  /* Dark mode */
-  --bg: #0f0f13;
-  --bg-glass: rgba(40,40,55,0.35);
-  --text: #e6e6e6;
-  --text-soft: #b3b3c8;
+  --bg: transparent;
+  --bg-glass: rgba(40,40,55,0.25);
+  --text: #000000;
+  --text-soft: #222222;
   --accent: #6a6aff;
   --accent2: #ff6ac0;
-  --card: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.1);
-  --shadow: rgba(0,0,0,0.6);
+  --card: rgba(255,255,255,0.15);
+  --border: rgba(0,0,0,0.1);
+  --shadow: rgba(0,0,0,0.4);
 }
 
 /* ----------------------- GLOBAL RESET ----------------------- */
@@ -62,12 +59,11 @@ body {
   border-radius: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.05);
 }
 
 /* --------------------- LIQUID GLASS BASE --------------------- */
-.glass,
-header, footer, section, article, nav {
+.glass, header, footer, section, article, nav {
   background: var(--bg-glass);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -82,9 +78,7 @@ header, footer, section, article, nav {
 
 /* --------------------- GENERIC TEXT STYLING --------------------- */
 h1, h2, h3, h4, h5, h6 {
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--text);
   margin-bottom: 1rem;
   font-weight: 800;
 }
