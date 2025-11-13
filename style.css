@@ -181,3 +181,18 @@ nav a:hover::after {
   border: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+/* --------------------- AUTO DARK MODE SUPPORT --------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: transparent;
+    --bg-glass: rgba(30, 30, 30, 0.26);
+    --text: #fff;
+    --text-soft: #e8e8e8;
+    --accent: #6a6aff;
+    --accent2: #ff6ac0;
+    --card: rgba(30,30,30,0.16);
+    --border: rgba(255,255,255,0.1);
+    --shadow: rgba(0,0,0,0.4);
+  }
+}
