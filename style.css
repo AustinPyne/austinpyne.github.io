@@ -9,7 +9,7 @@
 :root {
   --bg: transparent;
   --bg-glass: rgba(255,255,255,0.25);
-  --text: #000000;
+  --text: ##ffffff;
   --text-soft: #222222;
   --accent: #4b4bff;
   --accent2: #7a5bff;
@@ -21,7 +21,7 @@
 [data-theme="dark"] {
   --bg: transparent;
   --bg-glass: rgba(40,40,55,0.25);
-  --text: #000000;
+  --text: ##ffffff;
   --text-soft: #222222;
   --accent: #6a6aff;
   --accent2: #ff6ac0;
@@ -59,7 +59,7 @@ body {
   border-radius: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 1)
 }
 
 /* --------------------- LIQUID GLASS BASE --------------------- */
