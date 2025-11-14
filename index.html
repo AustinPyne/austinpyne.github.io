@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Austin Pyne - 2025 Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Austin Pyne - 2025 Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Header background only for index page */
+    .header-bg {
+      background-image: url('http://img.freepik.com/free-vector/circles-background-dark-tones_60389-166.jpg?semt=ais_hybrid&w=740&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* Dark overlay to make text readable */
+    .header-bg::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5); /* 50% opacity black overlay */
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2; /* Above overlay */
+      text-align: center;
+    }
+
+    /* Button styling */
+    .header-content .w3-button {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,12 +59,11 @@
 </div>
 
 <!-- Home Page -->
-<header class="w3-display-container w3-center" style="margin-top:46px">
-  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=60" style="width:100%">
-  <div class="w3-display-middle w3-text-white">
+<header class="header-bg" style="margin-top:46px">
+  <div class="header-content">
     <h1 class="w3-jumbo w3-animate-top">Austin Pyne - 2025 Portfolio</h1>
     <p class="w3-xlarge">A showcase of my learning, creativity, and achievements</p>
-    <a href="writing.html" class="w3-button w3-black w3-padding-large w3-margin-top">Explore My Work</a>
+    <a href="writing.html" class="w3-button w3-black w3-padding-large">Explore My Work</a>
   </div>
 </header>
 
