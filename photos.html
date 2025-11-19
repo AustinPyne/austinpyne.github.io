@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<style>
+    /* ===== Reset & base styles ===== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 3rem;
+        color: #ffdd59;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    /* ===== Gallery Grid ===== */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    }
+
+    /* ===== Lightbox ===== */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.8);}
+        to {opacity: 1; transform: scale(1);}
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 40px;
+        color: #ffdd59;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .close-btn:hover {
+        color: #fff;
+    }
+
+    /* ===== Dark/Light Toggle ===== */
+    .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ffdd59;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        transition: background 0.3s, color 0.3s;
+        z-index: 1001;
+    }
+
+    .light-mode {
+        background-color: #f4f4f4;
+        color: #121212;
+    }
+
+    .light-mode h1 {
+        color: #ff6600;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    }
+
+    .light-mode .close-btn {
+        color: #ff6600;
+    }
+</style>
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">Light Mode</button>
+
+<h1>My Stunning Photo Gallery</h1>
+
+<div class="gallery">
+    <img src="photo1.jpg" alt="Photo 1" onclick="openLightbox(this)">
+    <img src="photo2.jpg" alt="Photo 2" onclick="openLightbox(this)">
+    <img src="photo3.jpg" alt="Photo 3" onclick="openLightbox(this)">
+    <img src="photo4.jpg" alt="Photo 4" onclick="openLightbox(this)">
+    <img src="photo5.jpg" alt="Photo 5" onclick="openLightbox(this)">
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <a href="#" class="close-btn">&times;</a>
+    <img id="lightbox-img" src="" alt="Large Photo">
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(img) {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    }
+
+    function closeLightbox(e) {
+        if(e.target === lightbox || e.target.classList.contains('close-btn')) {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        }
+    }
+
+    // Dark/Light Mode
+    function toggleMode() {
+        document.body.classList.toggle('light-mode');
+        const btn = document.querySelector('.toggle-btn');
+        if(document.body.classList.contains('light-mode')) {
+            btn.textContent = 'Dark Mode';
+        } else {
+            btn.textContent = 'Light Mode';
+        }
+    }
+</script>
+
+</body>
+</html>
