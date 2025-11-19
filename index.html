@@ -26,42 +26,7 @@
       align-items: center;
       color: white;
     }
-   /* ===== Dark/Light Toggle ===== */
-    .toggle-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #ffdd59;
-        border: none;
-        border-radius: 25px;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        transition: background 0.3s, color 0.3s;
-        z-index: 1001;
-    }
 
-    .light-mode {
-        background-color: #f4f4f4;
-        color: #121212;
-    }
-
-    .light-mode h1 {
-        color: #ff6600;
-        text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
-    }
-
-    .light-mode .close-btn {
-        color: #ff6600;
-    }
-</style>
-</head>
-<body>
-
-<button class="toggle-btn" onclick="toggleMode()">Light Mode</button>
-  
     /* Dark overlay to make text readable */
     .header-bg::before {
       content: "";
